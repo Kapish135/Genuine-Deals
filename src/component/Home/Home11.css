@@ -1,0 +1,146 @@
+.HomeHeader {
+  /* background-color: b; */
+  height: auto;
+  /* background-attachment: fixed; */
+  /* position: relative; */
+  overflow-x: hidden;
+}
+
+.searchBox input:first-child {
+  margin-left: 150px;
+  margin-top: 10px;
+  border-radius: 2px;
+  height: 30px;
+  width: 600px;
+  font: 300 1.1vmax "Roboto";
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  position: relative;
+}
+.navbar {
+  display: flex;
+  /* justify-content: center; */
+  /* background-color: rgb(161, 25, 0); */
+  background-color: #0b4db7f1;
+  /* margin-left: 20px; */
+  /* position: sticky; */
+  height: 80px;
+  /* width: 100vw; */
+}
+
+.Categories {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  /* box-shadow: 1px 1px 3px 0px; */
+}
+.cat {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  font: 300 16px "Roboto";
+  color: black;
+}
+.cat img {
+  width: 70px;
+  height: 70px;
+}
+.navbar a {
+  margin-top: 15px;
+  font: 300 1.4vmax "Roboto";
+  color: white;
+  text-decoration: none;
+  margin-left: 40px;
+}
+.navbar .float {
+  font: 600 1.25vmax "Roboto";
+  margin-top: 18px;
+  margin-left: 280px;
+}
+.navbar .floatright {
+  /* font: 600 1.25vmax "Roboto"; */
+  margin-top: 18px;
+  margin-left: 150px;
+}
+.navbar img:first-child {
+  margin-left: 10px;
+  height: 75px;
+}
+.homeData {
+  margin-left: 9.3%;
+  /* height: 300px; */
+  border-radius: 10px;
+  width: 80vw;
+}
+.searchBox a {
+  /* font-weight: bold; */
+  background-color: white;
+  color: black;
+  font: 600 1.2vmax "Roboto";
+  padding: 7px 22px;
+  width: 90px;
+}
+.homeHeading {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1.4vmax;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
+  width: 20vmax;
+  padding: 1vmax;
+  margin-top: 50px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.button_login {
+  background-color: white;
+  /* color: black; */
+  /* font: 300 1.6vmax "Roboto"; */
+}
+@media screen and (max-width: 600px) {
+  .searchBox input:first-child {
+    margin-top: 35px;
+    height: 14px;
+    width: 300px;
+    margin-left: -115px;
+  }
+  .homeData {
+    width: 100vw;
+    margin-top: 25px;
+    margin-left: 0px;
+  }
+  .navbar img {
+    margin-top: -25px;
+    height: 5px;
+    width: 120px;
+  }
+  .button_login {
+    /* display: none; */
+    margin-top: -1px !important;
+    /* margin-bottom: 10px !important; */
+    /* top: 0.1vmax !important; */
+    margin-left: -70px !important;
+    font: 300 2vmax "Roboto" !important;
+    padding: 0.35vmax;
+    height: 20px !important;
+    border-radius: 5px !important;
+    /* width: 120px !important; */
+  }
+  .Categories {
+    /* margin-left: 30px; */
+    overflow-x: scroll;
+  }
+  .cat img {
+    width: 33px;
+    height: 44px;
+  }
+  .cat {
+    font: 300 1.4vmax "Roboto";
+  }
+  .navbar {
+    overflow-x: hidden;
+  }
+}
