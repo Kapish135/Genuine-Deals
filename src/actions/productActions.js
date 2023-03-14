@@ -42,9 +42,9 @@ export const getProduct =
       axios.defaults.withCredentials = true;
       dispatch({ type: ALL_PRODUCT_REQUEST });
 
-      let link = `http://localhost:4000/api/v1/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}&rating[gte] = ${rating}`;
+      let link = `${process.env.REACT_BACKEND_URL}/api/v1/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}&rating[gte] = ${rating}`;
       if (category) {
-        link = `http://localhost:4000/api/v1/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&rating[gte] = ${rating}`;
+        link = `${process.env.REACT_BACKEND_URL}/api/v1/products?keyword=${keyword}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&rating[gte] = ${rating}`;
       }
       const { data } = await axios.get(link, { withCredentials: true });
 
@@ -65,7 +65,7 @@ export const getAdminProduct = () => async (dispatch) => {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
 
     const { data } = await axios.get(
-      `http://localhost:4000/api/v1/admin/products`,
+      `${process.env.REACT_BACKEND_URL}/api/v1/admin/products`,
       {
         withCredentials: true,
       }
@@ -94,7 +94,7 @@ export const getProductDetails =
 
       // console.log(id);
       const { data } = await axios.get(
-        `http://localhost:4000/api/v1/products/${id}`
+        `${process.env.REACT_BACKEND_URL}/api/v1/products/${id}`
       );
 
       dispatch({
@@ -117,7 +117,7 @@ export const newReview = (reviewData) => async (dispatch) => {
     // console.log(id);
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.put(
-      `http://localhost:4000/api/v1/review`,
+      `${process.env.REACT_BACKEND_URL}/api/v1/review`,
       reviewData,
       config,
       { withCredentials: "true" }
@@ -141,7 +141,7 @@ export const getAllReviews = (id) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.get(
-      `http://localhost:4000/api/v1/reviews?id=${id}`,
+      `${process.env.REACT_BACKEND_URL}/api/v1/reviews?id=${id}`,
       config,
       {
         withCredentials: true,
@@ -188,7 +188,7 @@ export const createProduct = (productData) => async (dispatch) => {
     // console.log(id);
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.post(
-      `http://localhost:4000/api/v1/admin/product/new`,
+      `${process.env.REACT_BACKEND_URL}/api/v1/admin/product/new`,
       productData,
       config,
       { withCredentials: true }
@@ -215,7 +215,7 @@ export const updateProduct =
       // console.log(id);
       const config = { headers: { "Content-Type": "application/json" } };
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/admin/products/${id}`,
+        `${process.env.REACT_BACKEND_URL}/api/v1/admin/products/${id}`,
         config,
         productData
       );
@@ -238,7 +238,7 @@ export const deleteProduct = (id) => async (dispatch) => {
 
     // console.log(id);
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/admin/products/${id}`,
+      `${process.env.REACT_BACKEND_URL}/api/v1/admin/products/${id}`,
       {
         withCredentials: true,
       }

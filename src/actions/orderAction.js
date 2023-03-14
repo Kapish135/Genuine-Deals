@@ -33,7 +33,7 @@ export const createOrder = (order) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "http://localhost:4000/api/v1/order/new",
+      "${process.env.REACT_BACKEND_URL}/api/v1/order/new",
       order,
       config
     );
@@ -56,9 +56,12 @@ export const myOrders = () => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const { data } = await axios.get("http://localhost:4000/api/v1/orders/me", {
-      withCredentials: true,
-    });
+    const { data } = await axios.get(
+      "${process.env.REACT_BACKEND_URL}/api/v1/orders/me",
+      {
+        withCredentials: true,
+      }
+    );
 
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data.order });
   } catch (error) {
@@ -74,7 +77,7 @@ export const allOrders = () => async (dispatch) => {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
     const { data } = await axios.get(
-      "http://localhost:4000/api/v1/admin/orders",
+      "${process.env.REACT_BACKEND_URL}/api/v1/admin/orders",
       {
         withCredentials: true,
       }
@@ -101,7 +104,7 @@ export const updateOrder =
         },
       };
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/admin/orders/${id}`,
+        `${process.env.REACT_BACKEND_URL}/api/v1/admin/orders/${id}`,
         order,
         config,
         {
@@ -129,7 +132,7 @@ export const deleteOrder = (id) => async (dispatch) => {
       },
     };
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/admin/orders/${id}`
+      `${process.env.REACT_BACKEND_URL}/api/v1/admin/orders/${id}`
     );
 
     dispatch({ type: DELETE_ORDER_SUCCESS, payload: data.success });
@@ -148,7 +151,7 @@ export const getOrderDetails =
       dispatch({ type: ORDER_DETAILS_REQUEST });
 
       const { data } = await axios.get(
-        `http://localhost:4000/api/v1/order/${id}`,
+        `${process.env.REACT_BACKEND_URL}/api/v1/order/${id}`,
         {
           withCredentials: true,
         }

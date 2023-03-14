@@ -24,7 +24,7 @@ const CheckOutForm = () => {
     },
   };
   const { data } = axios.post(
-    "http://localhost:4000/api/v1/payment/process",
+    "${process.env.REACT_BACKEND_URL}/api/v1/payment/process",
     paymentData,
     config
   );

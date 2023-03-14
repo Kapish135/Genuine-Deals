@@ -52,7 +52,7 @@ function App() {
   // const [stripeApiKey, setStripeApiKey] = useState("");
   // async function getStripeApiKey() {
   //   const { data } = await axios.get(
-  //     `http://localhost:4000/api/v1/stripeApiKey`
+  //     `${process.env.REACT_BACKEND_URL}/api/v1/stripeApiKey`
   //   );
 
   //   setStripeApiKey(data.stripeApiKey);

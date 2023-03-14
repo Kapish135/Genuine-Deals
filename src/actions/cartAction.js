@@ -10,7 +10,7 @@ export const addItemsToCart =
   ({ id }, quantity) =>
   async (dispatch, getState) => {
     const { data } = await axios.get(
-      `http://localhost:4000/api/v1/products/${id}`
+      `${process.env.REACT_BACKEND_URL}/api/v1/products/${id}`
     );
 
     dispatch({
