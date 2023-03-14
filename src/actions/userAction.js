@@ -50,7 +50,7 @@ export const login = (email, password) => async (dispatch) => {
     const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.post(
-      `${process.env.REACT_BACKEND_URL}/api/v1/login`,
+      `https://genuine-deals.onrender.com/api/v1/login`,
       { email, password },
       {
         withCredentials: true,
@@ -71,7 +71,7 @@ export const register = (userdata) => async (dispatch) => {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const { data } = await axios.post(
-      `${process.env.REACT_BACKEND_URL}/api/v1/register`,
+      `https://genuine-deals.onrender.com/api/v1/register`,
       userdata,
       config
     );
@@ -95,7 +95,7 @@ export const loadUser = () => async (dispatch) => {
       },
     };
     const { data } = await axios.get(
-      `${process.env.REACT_BACKEND_URL}/api/v1/me`,
+      `https://genuine-deals.onrender.com/api/v1/me`,
       {
         withCredentials: true,
       },
@@ -113,7 +113,7 @@ export const getAllUsers = () => async (dispatch) => {
     dispatch({ type: ALL_USER_REQUEST });
 
     const { data } = await axios.get(
-      `${process.env.REACT_BACKEND_URL}/api/v1/admin/users`,
+      `https://genuine-deals.onrender.com/api/v1/admin/users`,
       {
         withCredentials: true,
       }
@@ -132,7 +132,7 @@ export const getUserDetails =
       dispatch({ type: USER_DETAILS_REQUEST });
 
       const { data } = await axios.get(
-        `${process.env.REACT_BACKEND_URL}/api/v1/admin/user/${id}`,
+        `https://genuine-deals.onrender.com/api/v1/admin/user/${id}`,
         {
           withCredentials: true,
         }
@@ -149,7 +149,7 @@ export const getUserDetails =
 export const alluser = () => async (dispatch, getState) => {
   try {
     const { data } = await axios.get(
-      `${process.env.REACT_BACKEND_URL}/api/v1/admin/users`
+      `https://genuine-deals.onrender.com/api/v1/admin/users`
     );
 
     localStorage.setItem("users", JSON.stringify(getState().allUsers.users));
@@ -161,7 +161,7 @@ export const alluser = () => async (dispatch, getState) => {
 export const logout = () => async (dispatch) => {
   try {
     const { data } = await axios.post(
-      `${process.env.REACT_BACKEND_URL}/api/v1/logout`,
+      `https://genuine-deals.onrender.com/api/v1/logout`,
       {},
       {
         withCredentials: true,
@@ -181,7 +181,7 @@ export const updateProfile = (userdata) => async (dispatch) => {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const { data } = await axios.put(
-      `${process.env.REACT_BACKEND_URL}/api/v1/me/update`,
+      `https://genuine-deals.onrender.com/api/v1/me/update`,
       userdata,
       config
     );
@@ -202,7 +202,7 @@ export const updatePassword = (password) => async (dispatch) => {
     // const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.put(
-      `${process.env.REACT_BACKEND_URL}/api/v1/password/update`,
+      `https://genuine-deals.onrender.com/api/v1/password/update`,
       password,
       // config,
       {
@@ -228,7 +228,7 @@ export const updateUser =
       const config = { headers: { "Content-Type": "application/json" } };
 
       const { data } = await axios.put(
-        `${process.env.REACT_BACKEND_URL}/api/v1/admin/user/${id}`,
+        `https://genuine-deals.onrender.com/api/v1/admin/user/${id}`,
         // { withCredentials: true },
         userData
         // config
@@ -249,7 +249,7 @@ export const deleteUser = (id) => async (dispatch) => {
     dispatch({ type: DELETE_USER_REQUEST });
 
     const { data } = await axios.delete(
-      `${process.env.REACT_BACKEND_URL}/api/v1/admin/user/${id}`,
+      `https://genuine-deals.onrender.com/api/v1/admin/user/${id}`,
       {
         withCredentials: true,
       }
@@ -270,7 +270,7 @@ export const forgotPassword = (email) => async (dispatch) => {
     const config = { headers: { "Content-Type": "application/json" } };
 
     const { data } = await axios.post(
-      `${process.env.REACT_BACKEND_URL}/api/v1/forgot`,
+      `https://genuine-deals.onrender.com/api/v1/forgot`,
       email,
       config
     );
@@ -293,7 +293,7 @@ export const resetPassword =
       const config = { headers: { "Content-Type": "application/json" } };
 
       const { data } = await axios.post(
-        `${process.env.REACT_BACKEND_URL}/api/v1/password/reset/${token}`,
+        `https://genuine-deals.onrender.com/api/v1/password/reset/${token}`,
         password,
         config,
         { withCredentials: true }

@@ -10,7 +10,7 @@ export const addItemsToCart =
   ({ id }, quantity) =>
   async (dispatch, getState) => {
     const { data } = await axios.get(
-      `${process.env.REACT_BACKEND_URL}/api/v1/products/${id}`
+      `https://genuine-deals.onrender.com/api/v1/products/${id}`
     );
 
     dispatch({
