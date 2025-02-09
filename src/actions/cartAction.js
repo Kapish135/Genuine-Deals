@@ -5,7 +5,7 @@ import {
 } from "../constants/cartConstant";
 import axios from "axios";
 
-//Add to cart
+//Add to cart Feature
 export const addItemsToCart =
   ({ id }, quantity) =>
   async (dispatch, getState) => {
