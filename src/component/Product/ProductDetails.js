@@ -28,8 +28,6 @@ import {
 
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
-import { useSlider } from "@mui/base";
-import Navbar from "../Home/Navbar";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
