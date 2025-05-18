@@ -33,7 +33,7 @@ export const createOrder = (order) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      `https://genuine-deals.onrender.com/api/v1/order/new`,
+      `https://sensational-lily-21be5b.netlify.app/api/v1/order/new`,
       order,
       config
     );
@@ -57,7 +57,7 @@ export const myOrders = () => async (dispatch) => {
       },
     };
     const { data } = await axios.get(
-      `https://genuine-deals.onrender.com/api/v1/orders/me`,
+      `https://sensational-lily-21be5b.netlify.app/api/v1/orders/me`,
       {
         withCredentials: true,
       }
@@ -77,7 +77,7 @@ export const allOrders = () => async (dispatch) => {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
     const { data } = await axios.get(
-      `https://genuine-deals.onrender.com/api/v1/admin/orders`,
+      `https://sensational-lily-21be5b.netlify.app/api/v1/admin/orders`,
       {
         withCredentials: true,
       }
@@ -104,7 +104,7 @@ export const updateOrder =
         },
       };
       const { data } = await axios.put(
-        `https://genuine-deals.onrender.com/api/v1/admin/orders/${id}`,
+        `https://sensational-lily-21be5b.netlify.app/api/v1/admin/orders/${id}`,
         order,
         config,
         {
@@ -132,7 +132,7 @@ export const deleteOrder = (id) => async (dispatch) => {
       },
     };
     const { data } = await axios.delete(
-      `https://genuine-deals.onrender.com/api/v1/admin/orders/${id}`
+      `https://sensational-lily-21be5b.netlify.app/api/v1/admin/orders/${id}`
     );
 
     dispatch({ type: DELETE_ORDER_SUCCESS, payload: data.success });
@@ -151,7 +151,7 @@ export const getOrderDetails =
       dispatch({ type: ORDER_DETAILS_REQUEST });
 
       const { data } = await axios.get(
-        `https://genuine-deals.onrender.com/api/v1/order/${id}`,
+        `https://sensational-lily-21be5b.netlify.app/api/v1/order/${id}`,
         {
           withCredentials: true,
         }

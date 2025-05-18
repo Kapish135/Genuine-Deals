@@ -10,7 +10,7 @@ export const addItemsToCart =
   ({ id }, quantity) =>
   async (dispatch, getState) => {
     const { data } = await axios.get(
-      `https://genuine-deals.onrender.com/api/v1/products/${id}`
+      `https://sensational-lily-21be5b.netlify.app/api/v1/products/${id}`
     );
 
     dispatch({
